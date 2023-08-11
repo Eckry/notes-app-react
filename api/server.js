@@ -11,16 +11,22 @@ mongoose
   .catch((err) => console.error(err));
 const PORT = process.env.PORT ?? 3001;
 
+//* GET
+
 app.get("/todos", async (req, res) => {
   const notes = await Note.find();
   res.json(notes);
 });
+
+//* POST
 
 app.post("/todos/add", async (req, res) => {
   const newNote = new Note(req.body);
   await newNote.save();
   res.json(newNote);
 });
+
+//* PUT 
 
 app.put("/todos/edit/:id", async (req, res) => {
   const noteToUpdate = await Note.findById(req.params.id);

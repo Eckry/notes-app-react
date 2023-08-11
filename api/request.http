@@ -18,3 +18,12 @@ PUT http://localhost:3001/todos/new-color/64d5857a6f43065e1fe1fb42/red
 
 ###
 PUT http://localhost:3001/todos/new-keywords/64d5857a6f43065e1fe1fb42/hola que tal
+
+###
+PUT http://localhost:3001/todos/edit/64d6c6ffd2414db48d8551a2
+Content-Type: application/json
+
+{
+  "title": "New Title",
+  "text": "New Text"
+}
