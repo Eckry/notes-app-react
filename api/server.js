@@ -22,6 +22,15 @@ app.post("/todos/add", async (req, res) => {
   res.json(newNote);
 });
 
+app.put("/todos/edit/:id", async (req, res) => {
+  const noteToUpdate = await Note.findById(req.params.id);
+  const {title, text} = req.body;
+  noteToUpdate.title = title;
+  noteToUpdate.text = text
+  await noteToUpdate.save();
+  res.json(noteToUpdate);
+});
+
 app.put("/todos/complete/:id", async (req, res) => {
   const noteToUpdate = await Note.findById(req.params.id);
   noteToUpdate.completed = !noteToUpdate.completed;

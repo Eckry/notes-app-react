@@ -6,6 +6,7 @@ POST http://localhost:3001/todos/add
 Content-Type: application/json
 
 {
+  "title": "First Note",
   "text": "Get the bread"
 }
 
