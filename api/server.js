@@ -16,4 +16,32 @@ app.get("/todos", async (req, res) => {
   res.json(notes);
 });
 
+app.post("/todos/add", async (req, res) => {
+  const newNote = new Note(req.body);
+  await newNote.save();
+  res.json(newNote);
+});
+
+app.put("/todos/complete/:id", async (req, res) => {
+  const noteToUpdate = await Note.findById(req.params.id);
+  noteToUpdate.completed = !noteToUpdate.completed;
+  await noteToUpdate.save();
+  res.json(noteToUpdate);
+});
+
+app.put("/todos/new-color/:id/:color", async (req, res) => {
+  const noteToUpdate = await Note.findById(req.params.id);
+  noteToUpdate.color = req.params.color;
+  await noteToUpdate.save();
+  res.json(noteToUpdate);
+});
+
+app.put("/todos/new-keywords/:id/:keywords", async (req, res) => {
+  const newKeywords = req.params.keywords.split(" ");
+  const noteToUpdate = await Note.findById(req.params.id);
+  noteToUpdate.keywords.push(...newKeywords);
+  await noteToUpdate.save();
+  res.json(noteToUpdate);
+});
+
 app.listen(PORT, () => console.log("Server initialized"));

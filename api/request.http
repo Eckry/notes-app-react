@@ -1,0 +1,19 @@
+GET http://localhost:3001/todos
+
+
+###
+POST http://localhost:3001/todos/add
+Content-Type: application/json
+
+{
+  "text": "Get the bread"
+}
+
+###
+PUT http://localhost:3001/todos/complete/64d5857a6f43065e1fe1fb42
+
+###
+PUT http://localhost:3001/todos/new-color/64d5857a6f43065e1fe1fb42/red
+
+###
+PUT http://localhost:3001/todos/new-keywords/64d5857a6f43065e1fe1fb42/hola que tal
