@@ -1,4 +1,7 @@
 GET http://localhost:3001/todos
+###
+
+GET http://localhost:3001/todos/keywords
 
 ###
 POST http://localhost:3001/todos/add
@@ -7,6 +10,14 @@ Content-Type: application/json
 {
   "title": "First Note",
   "text": "Get the bread"
+}
+
+###
+POST http://localhost:3001/todos/keywords/add
+Content-Type: application/json
+
+{
+  "keyword": "new keyword"
 }
 
 ###
@@ -26,3 +37,6 @@ Content-Type: application/json
   "title": "New Title",
   "text": "New Text"
 }
+
+###
+DELETE http://localhost:3001/todos/delete/64d6c6ffd2414db48d8551a2
