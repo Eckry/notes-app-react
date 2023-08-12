@@ -79,3 +79,8 @@ app.delete("/todos/delete/:id", async (req, res) => {
   const noteDeleted = await Note.findByIdAndDelete(req.params.id);
   res.json(noteDeleted);
 });
+
+app.delete("/todos/keywords/delete/:id", async (req, res) => {
+  const keywordDeleted = await Keyword.findByIdAndDelete(req.params.id);
+  res.json(keywordDeleted);
+});
