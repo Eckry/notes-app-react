@@ -18,13 +18,15 @@ export default function Home() {
   }
 
   return (
-    <>
+    <main>
       <header className="header">
-        <h1 className="header-title">Your Notes App</h1>
+        <h1 className="header-title">Your <span>Notes</span> App</h1>
       </header>
       <div className="utils">
         <div className="filters">
+          <p>Word filter: </p>
           <input type="text" />
+          <p>Keyword filter:</p>
           <select>
             <option value="">Hola</option>
           </select>
@@ -43,6 +45,6 @@ export default function Home() {
           );
         })}
       </div>
-    </>
+    </main>
   );
 }

@@ -1,0 +1,25 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.note {
+  padding: 1rem;
+  border: 3px solid;
+  border-radius: 1rem;
+  max-width: 200px;
+  height: 230px;
+  overflow-y: scroll;
+}
+
+.note-title {
+  font-size: 1.2rem;
+  border-bottom: 1px red solid;
+}
+
+.note-text {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+}
