@@ -1,5 +1,6 @@
 import "./styles/Home.css";
 import { useState, useEffect } from "react";
+import Note from "../components/Note.jsx";
 
 const API_BASE = "http://localhost:3001/";
 
@@ -30,7 +31,18 @@ export default function Home() {
         </div>
         <button className="add-note">+</button>
       </div>
-      <div className="notes-container"></div>
+      <div className="notes-container">
+        {notes.map((note) => {
+          return (
+            <Note
+              key={note._id}
+              color={note.color}
+              title={note.title}
+              text={note.text}
+            ></Note>
+          );
+        })}
+      </div>
     </>
   );
 }
