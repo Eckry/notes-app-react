@@ -17,7 +17,7 @@ POST http://localhost:3001/todos/keywords/add
 Content-Type: application/json
 
 {
-  "keyword": "new keyword"
+  "keyword": "not important"
 }
 
 ###
