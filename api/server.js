@@ -65,10 +65,10 @@ app.put("/todos/new-color/:id/:color", async (req, res) => {
   res.json(noteToUpdate);
 });
 
-app.put("/todos/new-keywords/:id/:keywords", async (req, res) => {
-  const newKeywords = req.params.keywords.split(" ");
+app.put("/todos/new-keywords/:id", async (req, res) => {
   const noteToUpdate = await Note.findById(req.params.id);
-  noteToUpdate.keywords.push(...newKeywords);
+  const { keyword } = req.body;
+  noteToUpdate.keywords.push(keyword);
   await noteToUpdate.save();
   res.json(noteToUpdate);
 });
