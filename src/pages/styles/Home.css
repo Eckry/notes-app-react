@@ -51,4 +51,5 @@ main {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
   border: red 5px solid;
+  align-items: center;
 }

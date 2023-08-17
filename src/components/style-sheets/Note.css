@@ -1,16 +1,30 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+.relative {
+  position: relative;
+}
+
 .note {
-  padding: 1rem;
   border: 3px solid;
   border-radius: 1rem;
-  max-width: 200px;
+  width: 190px;
   height: 230px;
+  position: relative;
+}
+
+.text-container {
+  padding: 1rem;
+  border: 3px solid;
   overflow-y: scroll;
+  border-radius: 1rem;
+  position: relative;
+  height: 230px;
 }
 
 .note-title {
@@ -22,4 +36,17 @@
   margin-top: 0.3rem;
   font-size: 0.8rem;
   word-wrap: break-word;
+}
+
+.note-button {
+  z-index: 5555;
+  position: absolute;
+  border: 3px solid;
+  background-color: black;
+  outline: none;
+  border-radius: 50%;
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  top: -0.5rem;
+  left: -0.5rem;
 }

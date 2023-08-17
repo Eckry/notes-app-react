@@ -72,6 +72,7 @@ export default function Home() {
         {filteredNotes.map((note) => {
           return (
             <Note
+              id={note._id}
               key={note._id}
               color={note.color}
               title={note.title}
