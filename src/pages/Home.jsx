@@ -1,6 +1,7 @@
 import "./styles/Home.css";
 import { useState, useEffect } from "react";
 import Note from "../components/Note.jsx";
+import Main from "../components/Main";
 
 const API_BASE = "http://localhost:3001/";
 
@@ -40,34 +41,7 @@ export default function Home() {
   const filteredNotes = filterNotes(notes);
 
   return (
-    <main>
-      <header className="header">
-        <h1 className="header-title">
-          Your <span>Notes</span> App
-        </h1>
-      </header>
-      <div className="utils">
-        <div className="filters">
-          <p>Word filter: </p>
-          <input
-            type="text"
-            value={filters.word}
-            onChange={(e) =>
-              setFilters((filters) => ({ ...filters, word: e.target.value }))
-            }
-          />
-          <p>Keyword filter:</p>
-          <select onChange={(e) => setKeyword(e.target.value)}>
-            <option value=""></option>
-            {filters.keywords.map((keyword) => (
-              <option key={keyword.keyword} value={keyword.keyword}>
-                {keyword.keyword}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button className="add-note">+</button>
-      </div>
+    <Main filters={filters}>
       <div className="notes-container">
         {filteredNotes.map((note) => {
           return (
@@ -81,6 +55,6 @@ export default function Home() {
           );
         })}
       </div>
-    </main>
+    </Main>
   );
 }
